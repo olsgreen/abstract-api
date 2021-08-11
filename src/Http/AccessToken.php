@@ -41,12 +41,12 @@ class AccessToken implements \JsonSerializable
         return $this->getExpires() < new DateTime();
     }
 
-    public function getToken():? string
+    public function getToken(): ?string
     {
         return $this->access_token;
     }
 
-    public function getRefreshToken():? string
+    public function getRefreshToken(): ?string
     {
         return $this->refresh_token;
     }

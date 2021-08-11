@@ -63,7 +63,7 @@ abstract class AbstractEndpoint
 
             $truncatedBody = substr((string) $response->getBody(), 0, 100);
 
-            throw new \Exception('The response had an unsupported Content-Type: ' . $truncatedBody);
+            throw new \Exception('The response had an unsupported Content-Type: '.$truncatedBody);
         }
     }
 
