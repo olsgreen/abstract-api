@@ -41,6 +41,15 @@ class AccessToken implements \JsonSerializable
         return $this->getExpires() < new DateTime();
     }
 
+    public function isNearExpiration($seconds = 60): bool
+    {
+        $futureDateTime = (new DateTime())->add(
+            \DateInterval::createFromDateString($seconds . ' seconds')
+        );
+
+        return $this->getExpires() < $futureDateTime;
+    }
+
     public function getToken(): ?string
     {
         return $this->access_token;
