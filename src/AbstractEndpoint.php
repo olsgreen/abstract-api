@@ -14,6 +14,11 @@ abstract class AbstractEndpoint
         $this->client = $client;
     }
 
+    public function getClient(): Client
+    {
+        return $this->client;
+    }
+
     protected function booleanNormalizer()
     {
         return function ($options, $value) {
